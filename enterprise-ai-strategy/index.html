@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test-yan-13 | Enterprise AI Strategy Consulting</title>
+    <meta name="description" content="Enterprise AI strategy consulting to implement AI, develop roadmaps, and build enterprise-grade AI applications. Stop boiling the ocean and start delivering AI value.">
+    <meta name="keywords" content="enterprise ai strategy consulting, ai roadmap for enterprises, ai transformation strategy, define ai use cases, ai initiative prioritization, c suite ai strategy">
+    
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+
+        :root {
+            /* BRAND COLORS EXTRACTED FROM LOGO */
+            --color-primary: #000000;
+            --color-primary-dark: #000000; /* Darkening black stays black */
+            --color-accent: #ffffff;
+            
+            /* SYSTEM COLORS */
+            --color-background: #080808;
+            --color-surface: #141414;
+            --color-surface-soft: #1f1f1f;
+            --color-text: #ffffff;
+            --color-text-muted: #a1a1a1;
+            --color-border: #262626;
+            
+            /* TYPOGRAPHY */
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            
+            /* SPACING & RADIUS */
+            --radius-full: 9999px;
+            --radius-lg: 32px;
+            --radius-md: 20px;
+            --section-padding: 120px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background-color: rgba(8, 8, 8, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-wrapper {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.03);
+            background-color: #f0f0f0;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-accent);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-accent);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: var(--section-padding);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 84px);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 24px;
+        }
+
+        .hero-subheadline {
+            font-size: 20px;
+            color: var(--color-text-muted);
+            max-width: 540px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .secondary-link {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .secondary-link:hover {
+            border-color: var(--color-text-muted);
+        }
+
+        .hero-mockup {
+            position: relative;
+        }
+
+        .mockup-card {
+            background-color: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            padding: 40px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .mockup-line {
+            height: 12px;
+            background: #262626;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+
+        .mockup-line.short { width: 60%; }
+        .mockup-line.long { width: 100%; }
+        .mockup-line.accent { background: var(--color-accent); width: 40%; }
+
+        /* --- FEATURES SECTION --- */
+        .features {
+            padding: var(--section-padding) 0;
+            background-color: var(--color-background);
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin-bottom: 64px;
+        }
+
+        h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background-color: var(--color-surface);
+            padding: 48px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            transition: border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--color-text-muted);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            font-weight: 800;
+            font-size: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .feature-card p {
+            color: var(--color-text-muted);
+            font-size: 16px;
+        }
+
+        /* --- HOW IT WORKS --- */
+        .how-it-works {
+            padding: var(--section-padding) 0;
+        }
+
+        .steps-container {
+            counter-reset: step;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 40px;
+            padding: 48px 0;
+            border-bottom: 1px solid var(--color-border);
+            align-items: flex-start;
+        }
+
+        .step-number {
+            font-size: 24px;
+            font-weight: 800;
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            background: var(--color-surface-soft);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-content h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .step-content p {
+            font-size: 18px;
+            color: var(--color-text-muted);
+            max-width: 600px;
+        }
+
+        /* --- TESTIMONIALS --- */
+        .testimonials {
+            padding: var(--section-padding) 0;
+            background-color: var(--color-surface);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background-color: var(--color-background);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: var(--color-text-muted);
+        }
+
+        /* --- FINAL CTA --- */
+        .final-cta {
+            padding: var(--section-padding) 0;
+            text-align: center;
+        }
+
+        .cta-box {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            padding: 80px 40px;
+            border-radius: var(--radius-lg);
+        }
+
+        .cta-box h2 {
+            font-size: clamp(32px, 6vw, 64px);
+            margin-bottom: 24px;
+        }
+
+        .cta-box p {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        .btn-dark {
+            background-color: var(--color-primary);
+            color: var(--color-accent);
+        }
+
+        .btn-dark:hover {
+            transform: scale(1.05);
+            background-color: #1a1a1a;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: var(--color-text-muted);
+            margin-top: 20px;
+            max-width: 300px;
+        }
+
+        .footer-nav h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+            color: var(--color-text-muted);
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-nav ul li a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 14px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons svg {
+            fill: var(--color-text-muted);
+            transition: fill 0.2s ease;
+            cursor: pointer;
+        }
+
+        .social-icons svg:hover {
+            fill: var(--color-text);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-subheadline { margin: 0 auto 40px; }
+            .hero-ctas { justify-content: center; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .features-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .step-item { flex-direction: column; gap: 20px; }
+            .section-header { text-align: center; margin: 0 auto 48px; }
+            :root { --section-padding: 80px; }
+        }
+    </style>
+  <base href="/enterprise-ai-strategy/" />
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="logo-wrapper">
+                    <img src="logo-test-yan-13.png" alt="test-yan-13 logo" style="height:40px;object-fit:contain">
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="auth.html">Sign In</a>
+                    <a href="https://test.test" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Enterprise AI Strategy That Works.</h1>
+                    <p class="hero-subheadline">
+                        Stop wasting budget on siloed pilots. We help CTOs and CAIOs build outcome-linked AI roadmaps that deliver measurable P&L value in 90 days.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="https://test.test" class="btn btn-primary">Define Your Strategy</a>
+                        <a href="about.html" class="secondary-link">How we help CTOs →</a>
+                    </div>
+                </div>
+                <div class="hero-mockup">
+                    <div class="mockup-card">
+                        <span class="status-badge">AI Portfolio Status: Active</span>
+                        <div class="mockup-line accent"></div>
+                        <div class="mockup-line long"></div>
+                        <div class="mockup-line short"></div>
+                        <div style="margin-top: 40px; display: flex; gap: 10px;">
+                            <div style="flex: 1; height: 100px; background: #1a1a1a; border-radius: 12px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 24px;">90d</div>
+                            <div style="flex: 1; height: 100px; background: #1a1a1a; border-radius: 12px; border: 1px solid #333; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 24px; color: var(--color-accent);">ROI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES / JOBS TO BE DONE -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Solve your Enterprise AI challenges today.</h2>
+            </div>
+            <div class="features-grid">
+                <!-- JTBD 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">01</div>
+                    <h3>90-Day High-Impact Value</h3>
+                    <p>Stop "boiling the ocean" with massive visions. We identify and launch 2-3 high-impact projects that show results within your first quarter.</p>
+                </div>
+                <!-- JTBD 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">02</div>
+                    <h3>P&L Linked Roadmaps</h3>
+                    <p>Tie every AI initiative to concrete business outcomes. We provide the KPIs you need to secure budget from skeptical finance stakeholders.</p>
+                </div>
+                <!-- JTBD 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">03</div>
+                    <h3>Build vs Buy Frameworks</h3>
+                    <p>Avoid expensive missteps. Get structured criteria for selecting vendors vs. building internal IP to maintain your competitive edge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Strategic Framework</h2>
+            </div>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Portfolio Audit</h3>
+                        <p>We analyze your existing pilots and vendor relationships to create a unified view of your AI landscape, identifying overlaps and waste.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Feasibility Scoring</h3>
+                        <p>Every use case is ranked by business value vs. technical feasibility. We prioritize the "Quick Wins" and "Strategic Bets" for your roadmap.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Governance & Scaling</h3>
+                        <p>We establish the steering committees and risk registers required to move from experimental pilots to enterprise-grade AI applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Enterprise Leaders</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"test-yan-13 helped us cut through the vendor hype and focus on three use cases that delivered $2M in savings in just 4 months."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Chief AI Officer</h4>
+                            <p>Global Retail Group</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The Build vs Buy framework was exactly what our CTO office needed to stop duplicating work across internal departments."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>VP of Engineering</h4>
+                            <p>Tier 1 Banking Institution</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Finally, an AI roadmap that the CFO actually understands. We moved from skepticism to full funding for our 2026 roadmap."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Executive Director</h4>
+                            <p>Manufacturing Enterprise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Secure your AI future.</h2>
+                <p>Stop running pilots in silos. Build a strategic roadmap today.</p>
+                <a href="https://test.test" class="btn btn-dark">Start Your 90-Day Roadmap</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-wrapper">
+                        <img src="logo-test-yan-13.png" alt="test-yan-13 logo" style="height:32px;object-fit:contain">
+                    </div>
+                    <p>Expert Enterprise AI Strategy consulting for modern leadership.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="auth.html">Client Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:strategy@test.test">strategy@test.test</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 test-yan-13. All rights reserved.</p>
+                <div class="social-icons">
+                    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <svg width="20" height="20" viewBox="
